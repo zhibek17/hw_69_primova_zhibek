@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+</head>
+<body>
+    <h1>Калькулятор</h1>
+    <div id="inp">
+        <input type="text" name="one">
+        <input type="text" name="two">
+    </div>
+
+    <div id="btn">
+        <button data-new="{% url 'calculate:add' %}" value="add" onclick="op='+'">+</button>
+        <button data-new="{% url 'calculate:subtract' %}" value="subtract" onclick="op='-'">-</button>
+        <button data-new="{% url 'calculate:multiply' %}" value="multiply" onclick="op='*'">*</button>
+        <button data-new="{% url 'calculate:divide' %}" value="divide" onclick="op='/'">/</button>
+    </div>
+
+    <div id="res">
+        <h1 id="result"></h1>
+    </div>
+
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
+
+
